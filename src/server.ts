@@ -40,6 +40,6 @@ createConnection()
     app.use(protectedRouter.routes()).use(protectedRouter.allowedMethods());
 
     // 运行服务器
-    app.listen(3000);
+    app.listen(1024);
   })
   .catch((err: string) => console.log('TypeORM connection error:', err));
