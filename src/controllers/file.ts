@@ -46,7 +46,7 @@ export default class FileController {
                 // fse.readdir异步枚举目录的文件名
                 const chunkPaths = fse.readdirSync(chunkDir)
                 // console.log(chunkPaths.length);
-                fse.writeFile(filePath)
+                fse.writeFile(filePath, "")
                 // chunkPaths读取出来的顺序是不对的,合成的文件可能会损坏,应该根据切片顺序排序在进行合并处理
                 let chunkPathsSort: String[] = [];
                 chunkPaths.forEach((item: String) => chunkPathsSort[Number(item.split(`${filename}-`)[1])] = item)
