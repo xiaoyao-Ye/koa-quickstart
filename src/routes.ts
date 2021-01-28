@@ -3,6 +3,7 @@ import Router from '@koa/router';
 import AuthController from './controllers/auth';
 import UserController from './controllers/user';
 import FileController from './controllers/file';
+import ArticleController from './controllers/article';
 
 const unprotectedRouter = new Router();
 
@@ -11,6 +12,9 @@ unprotectedRouter.post('/auth/login', AuthController.login);
 unprotectedRouter.post('/auth/register', AuthController.register);
 // file 相关路由
 unprotectedRouter.post('/fileUpload', FileController.fileUpload);
+unprotectedRouter.post('/fileMerge', FileController.fileMerge);
+// article 文章相关
+unprotectedRouter.post('/addArticle', ArticleController.addArticle);
 
 const protectedRouter = new Router();
 
