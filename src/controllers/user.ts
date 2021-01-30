@@ -5,11 +5,13 @@ import { User } from '../entity/user';
 import { NotFoundException, ForbiddenException } from '../exceptions';
 import * as argon2 from 'argon2';
 
+import { getClientIP } from '../utils/index'
+
 export default class UserController {
     public static async listUsers(ctx: Context) {
         const userRepository = getManager().getRepository(User);
         const users = await userRepository.find();
-
+        console.log(getClientIP(ctx))
         ctx.status = 200;
         ctx.body = users;
     }

@@ -1,5 +1,5 @@
 import { Context } from 'koa';
-import { Any, getManager } from 'typeorm';
+import { getManager } from 'typeorm';
 
 import { article } from '../entity/article';
 
